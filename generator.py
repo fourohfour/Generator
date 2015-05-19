@@ -2,13 +2,17 @@ import csv
 
 outfile = []
 parts = {}
-with open('template.txt') as template:
+datalocation = "./ICTracker/"
+if datalocation == "":
+    datalocation = input("Enter the path to your data: ")
+
+with open(datalocation + 'template.txt') as template:
     for line in template:
         kv = line.split(":")
         parts[kv[0].strip()] = kv[1].strip()
 outfile.append(parts["START"])
 
-with open("data.csv", "r") as data:
+with open(datalocation + "data.csv", "r") as data:
     datareader = csv.reader(data, delimiter=",")
     headers = True
     headerlist = []
@@ -24,6 +28,6 @@ with open("data.csv", "r") as data:
 
 outfile.append(parts["END"])
 
-with open("output.txt", "w") as output:
+with open(datalocation + "output.txt", "w") as output:
     for item in outfile:
         print(item, file=output)
