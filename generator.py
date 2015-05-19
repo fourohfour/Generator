@@ -1,10 +1,12 @@
 import csv
 
-outfile = []
-parts = {}
 datalocation = "./ICTracker/"
+
 if datalocation == "":
     datalocation = input("Enter the path to your data: ")
+
+outfile = []
+parts = {}
 
 with open(datalocation + 'template.txt') as template:
     for line in template:
