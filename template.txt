@@ -1,0 +1,3 @@
+START :[list]
+MODULE :[li] [url={LINK}][b]{NAME}[/b][/url] (R{ROUND})[br][color=red][{TYPE}][/color]  [i]by {CREATOR}[/i][/li]
+END :[/list]
